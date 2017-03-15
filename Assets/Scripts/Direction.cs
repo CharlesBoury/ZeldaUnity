@@ -12,7 +12,7 @@ public class Direction : MonoBehaviour {
 	public int vertical = 0;
 
 
-	void Update () {
+	void FixedUpdate () {
 
 		bool up    = Input.GetKey("up");
 		bool down  = Input.GetKey("down");
@@ -37,19 +37,9 @@ public class Direction : MonoBehaviour {
 		if (left)  gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
 		if (right) gameObject.transform.rotation = Quaternion.Euler(0, 0, 270);
 
-		// recompute vitesse if diagonal
-		// float vit = vitesse;
-		// if (vertical != 0 && horizontal != 0) vit *= Mathf.Cos(Mathf.PI/4);
 
-		if (horizontal != 0)
-			transform.localPosition = new Vector3(
-				transform.localPosition.x + horizontal * vitesse * Time.deltaTime,
-				transform.localPosition.y,
-				transform.localPosition.z);
-		else if (vertical != 0)
-			transform.localPosition = new Vector3(
-				transform.localPosition.x,
-				transform.localPosition.y + vertical * vitesse * Time.deltaTime,
-				transform.localPosition.z);
+		if      (horizontal != 0) GetComponent<Rigidbody2D>().velocity = new Vector2 (horizontal * vitesse, 0);
+		else if (vertical   != 0) GetComponent<Rigidbody2D>().velocity = new Vector2 (0, vertical * vitesse);
+		else                      GetComponent<Rigidbody2D>().velocity = new Vector2 (0,0);
 	}
 }
