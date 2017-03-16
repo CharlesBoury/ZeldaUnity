@@ -36,7 +36,6 @@ public class CerveauMechant : MonoBehaviour {
 
 
 	void ChooseNewDirection () {
-		Debug.Log("Change direction");
 		Reset();
 		// 33% chance of moving vertically
 		if (Random.value < 0.33f) {
