@@ -10,16 +10,22 @@ public class Vie : MonoBehaviour {
 
 	void Start() {
 		pv = pvMax;
-		display.text = pv+"/"+pvMax;
+		displayVie();
 	}
 
 	public void takeDamage() {
 		pv --;
-		display.text = pv+"/"+pvMax;
+		displayVie();
 		if (pv <= 0) die();
 	}
 
 	public void die() {
 		Destroy(gameObject);
+	}
+
+	public void displayVie() {
+		if (display != null) {
+			display.text = pv+"/"+pvMax;
+		}
 	}
 }
