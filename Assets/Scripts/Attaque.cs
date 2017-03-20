@@ -8,8 +8,7 @@ public class Attaque : MonoBehaviour {
 	
 	void Update () {
 		if (Input.GetKeyDown("space")) {
-			Debug.Log("Attak !");
-			epee.SetActive(true)	;
+			epee.SetActive(true);
 		} else {
 			epee.SetActive(false);
 		}
