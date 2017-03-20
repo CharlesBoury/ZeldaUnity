@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114507106915320932}
   - component: {fileID: 114711279332240782}
   - component: {fileID: 114441327051388714}
-  - component: {fileID: 114238059052338812}
+  - component: {fileID: 114564236814056632}
   m_Layer: 0
   m_Name: Perso
   m_TagString: Player
@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1868193700556170
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,20 +239,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &114238059052338812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1368903887275760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6ae385e18134f2f8850122f83a1b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pv: 10
-  pvMax: 10
-  display: {fileID: 102783447441623950}
 --- !u!114 &114441327051388714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,6 +268,20 @@ MonoBehaviour:
   down: 0
   left: 0
   right: 0
+--- !u!114 &114564236814056632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368903887275760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6ae385e18134f2f8850122f83a1b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: 6
+  pvMax: 6
+  display: {fileID: 102783447441623950}
 --- !u!114 &114589989111823578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,7 +334,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 266012793
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6d2619a8727984b96b329eb0c59b9e79, type: 3}
   m_Color: {r: 0.1712803, g: 0.5092471, b: 0.64705884, a: 1}
@@ -369,7 +369,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 266012793
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6d2619a8727984b96b329eb0c59b9e79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -404,7 +404,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 266012793
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6d2619a8727984b96b329eb0c59b9e79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
