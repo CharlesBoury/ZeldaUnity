@@ -39,6 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Decor
+    uniqueID: 4120743969
+    locked: 0
+  - name: Mechants
+    uniqueID: 2419427557
+    locked: 0
+  - name: "H\xE9ros"
+    uniqueID: 266012793
+    locked: 0
+  - name: Roupies
+    uniqueID: 4030270753
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
