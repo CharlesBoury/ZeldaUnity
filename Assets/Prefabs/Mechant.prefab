@@ -296,14 +296,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   up: 0
   down: 0
-  left: 1
+  left: 0
   right: 0
   attenteQuandImmobile: 0.6
   perseveranceMin: 0.5
-  perseveranceMax: 2
+  perseveranceMax: 1
   chanceDeSarreter: 0.3
-  showLineCast: 0
+  showLineCast: 1
   distLinecast: 0.6
+  sizeLinecast: 0.5
 --- !u!212 &212479953130589400
 SpriteRenderer:
   m_ObjectHideFlags: 1

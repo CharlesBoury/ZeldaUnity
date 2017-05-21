@@ -17,6 +17,7 @@ public class CerveauMechant : MonoBehaviour {
 
 	public bool showLineCast;
 	public float distLinecast;
+	public float sizeLinecast;
 
 
 
@@ -57,7 +58,7 @@ public class CerveauMechant : MonoBehaviour {
 	}
 
 	void ChangeDirection() {
-		List<bool> mursPresents = MursPresents(distLinecast, showLineCast);
+		List<bool> mursPresents = MursPresents(distLinecast, sizeLinecast, showLineCast);
 
 		// compte le nombre de murs absents (combien de false dans la liste)
 		int possibilites = 0;
@@ -79,7 +80,7 @@ public class CerveauMechant : MonoBehaviour {
 		}
 	}
 
-	List<bool> MursPresents(float dist, bool showDebug = false) {
+	List<bool> MursPresents(float dist, float size, bool showDebug = false) {
 
 		// renvoie une liste de bool, dans le même ordre
 		// que les directions: haut, bas, gauche, droite.
@@ -99,14 +100,14 @@ public class CerveauMechant : MonoBehaviour {
 			// garder cette info dans la liste
 			environnementPresent.Add(
 				Physics2D.Linecast(
-					transform.position,
-					transform.position + (directions[i] * dist)
+					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],Mathf.PI/2) * size,
+					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],-Mathf.PI/2) * size
 				)
 			);
 			// dessiner des lignes de debug dans la scene, vert si rien, rouge si collide
 			if (showDebug) Debug.DrawLine(
-					transform.position,
-					transform.position + (directions[i] * dist), 
+					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],Mathf.PI/2) * size,
+					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],-Mathf.PI/2) * size,
 					environnementPresent[i] ? Color.black : Color.green,
 					0.5f,
 					false);

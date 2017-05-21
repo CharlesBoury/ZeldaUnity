@@ -302,8 +302,9 @@ MonoBehaviour:
   perseveranceMin: 0.5
   perseveranceMax: 2
   chanceDeSarreter: 0.3
-  showLineCast: 0
+  showLineCast: 1
   distLinecast: 0.8
+  sizeLinecast: 0.75
 --- !u!212 &212174333154384732
 SpriteRenderer:
   m_ObjectHideFlags: 1
