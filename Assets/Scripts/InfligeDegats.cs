@@ -16,8 +16,6 @@ public class InfligeDegats : MonoBehaviour {
 			// et si celui touché a une vie
 			Vie targetLife = coll.gameObject.GetComponent("Vie") as Vie;
 			if (targetLife != null) {
-
-				Debug.Log(gameObject.tag + " atk=> " + coll.gameObject.tag);
 				targetLife.takeDamage();
 			}
 		}
