@@ -234,6 +234,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4337923524361638, guid: 970352a4f05df4ad0a7d9cefc17f197d,
     type: 2}
   m_PrefabInternal: {fileID: 612691282}
+--- !u!114 &216794134 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
+    type: 2}
+  m_PrefabInternal: {fileID: 878056497}
+  m_Script: {fileID: 11500000, guid: 1e30aeda1b562442ba467d471f5a97a5, type: 3}
 --- !u!1 &235649699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1488,7 @@ Prefab:
     - target: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
         type: 2}
       propertyPath: showLineCast
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
         type: 2}
@@ -1516,6 +1522,11 @@ Prefab:
       propertyPath: m_Name
       value: Mechant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114501869472719128, guid: 56c99b145a3024f62bde5ef15cee5238,
+        type: 2}
+      propertyPath: cerveau
+      value: 
+      objectReference: {fileID: 216794134}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56c99b145a3024f62bde5ef15cee5238, type: 2}
   m_IsPrefabParent: 0
@@ -2193,7 +2204,7 @@ GameObject:
   - component: {fileID: 1249700518}
   - component: {fileID: 1249700517}
   m_Layer: 0
-  m_Name: ScreenManager
+  m_Name: Screens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,6 +2361,12 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!114 &1435709456 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
+    type: 2}
+  m_PrefabInternal: {fileID: 1764760467}
+  m_Script: {fileID: 11500000, guid: 1e30aeda1b562442ba467d471f5a97a5, type: 3}
 --- !u!1 &1489476426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,7 +2676,7 @@ Prefab:
     - target: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
         type: 2}
       propertyPath: showLineCast
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
         type: 2}
@@ -2693,6 +2710,11 @@ Prefab:
       propertyPath: m_Name
       value: Mechant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114501869472719128, guid: 56c99b145a3024f62bde5ef15cee5238,
+        type: 2}
+      propertyPath: cerveau
+      value: 
+      objectReference: {fileID: 1435709456}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56c99b145a3024f62bde5ef15cee5238, type: 2}
   m_IsPrefabParent: 0
@@ -2701,6 +2723,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4417730811470966, guid: 56c99b145a3024f62bde5ef15cee5238,
     type: 2}
   m_PrefabInternal: {fileID: 1980092980}
+--- !u!114 &1905152012 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980092980}
+  m_Script: {fileID: 11500000, guid: 1e30aeda1b562442ba467d471f5a97a5, type: 3}
 --- !u!1 &1917285508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,7 +2984,7 @@ Prefab:
     - target: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
         type: 2}
       propertyPath: showLineCast
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114771175884596658, guid: 56c99b145a3024f62bde5ef15cee5238,
         type: 2}
@@ -2990,6 +3018,11 @@ Prefab:
       propertyPath: m_Name
       value: Mechant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114501869472719128, guid: 56c99b145a3024f62bde5ef15cee5238,
+        type: 2}
+      propertyPath: cerveau
+      value: 
+      objectReference: {fileID: 1905152012}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56c99b145a3024f62bde5ef15cee5238, type: 2}
   m_IsPrefabParent: 0

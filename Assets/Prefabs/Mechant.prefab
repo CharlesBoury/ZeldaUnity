@@ -271,6 +271,7 @@ MonoBehaviour:
   vitesse: 2
   horizontal: 0
   vertical: 0
+  cerveau: {fileID: 114771175884596658}
 --- !u!114 &114574559122316688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,7 +303,7 @@ MonoBehaviour:
   perseveranceMin: 0.5
   perseveranceMax: 1
   chanceDeSarreter: 0.3
-  showLineCast: 1
+  showLineCast: 0
   distLinecast: 0.6
   sizeLinecast: 0.5
 --- !u!212 &212479953130589400

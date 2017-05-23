@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CerveauMechant : MonoBehaviour {
-	public bool up;
-	public bool down;
-	public bool left;
-	public bool right;
+public class CerveauMechant : Cerveau
+{
 
 	public float attenteQuandImmobile;
 	public float perseveranceMin;
 	public float perseveranceMax;
 	float perseverance;
+
 	[Range(0, 1)]
 	public float chanceDeSarreter;
 
@@ -21,20 +19,24 @@ public class CerveauMechant : MonoBehaviour {
 
 
 
-	void Start()
+	new void Start()
 	{
-		restartPerseverance();
+		ResetDirections();
+		RestartPerseverance();
 	}
 
-	void restartPerseverance()
+	void RestartPerseverance()
 	{
-		perseverance = perseveranceMin + (perseveranceMax - perseveranceMin)*Random.Range(0.0f, 1.0f);
+		perseverance = perseveranceMin + (perseveranceMax - perseveranceMin) * Random.Range(0.0f, 1.0f);
 	}
 
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		restartPerseverance();
-		ChangeDirection();
+		if (this.enabled) // le cerveau ne réagit aux collisions que s'il est actif
+		{
+			ChangeDirection();
+			RestartPerseverance();
+		}
 	}
 
 	void Update ()
@@ -45,16 +47,15 @@ public class CerveauMechant : MonoBehaviour {
 			// 30% chance de s'arreter
 			if (Random.Range(0.0f, 1.0f) <= chanceDeSarreter)
 			{
-				Reset();
+				ResetDirections();
 				perseverance = attenteQuandImmobile;
 			}
 			else
 			{
 				ChangeDirection();
-				restartPerseverance();
+				RestartPerseverance();
 			}
 		}
-		piloteMove();
 	}
 
 	void ChangeDirection() {
@@ -115,33 +116,10 @@ public class CerveauMechant : MonoBehaviour {
 		return environnementPresent;
 	}
 
-	void piloteMove()
-	{
-		// piloter les valeurs du component Move
-		Move m = GetComponent<Move>();
-		if      (down && up) m.vertical =  0;
-		else if (down      ) m.vertical = -1;
-		else if (        up) m.vertical =  1;
-		else                 m.vertical =  0;
-
-
-		if      (left && right) m.horizontal =  0;
-		else if (left         ) m.horizontal = -1;
-		else if (        right) m.horizontal =  1;
-		else                    m.horizontal =  0;
-	}
-
 	void AppuyerSurBoutons(int n) {
 		up    = (n==0);
 		down  = (n==1);
 		left  = (n==2);
 		right = (n==3);
-	}
-
-	void Reset() {
-		up    = false;
-		down  = false;
-		left  = false;
-		right = false;
 	}
 }

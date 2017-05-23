@@ -11,6 +11,8 @@ public class ScreenManager : MonoBehaviour {
 
 	public CameraFollow cam;
 
+	Cerveau[] cerveaux;
+
 	void Update () {
 		if (cam != null)
 		{
@@ -19,8 +21,9 @@ public class ScreenManager : MonoBehaviour {
 				for(int j = 0; j < 2; j++)
 				{
 					bool isActive = cam.gridX == i && cam.gridY == j;
-					if ( i == 0 ) screensX0[j].SetActive(isActive);
-					else screensX1[j].SetActive(isActive);
+					if ( i == 0 ) cerveaux = screensX0[j].GetComponentsInChildren<Cerveau>();
+					else          cerveaux = screensX1[j].GetComponentsInChildren<Cerveau>();
+					foreach (Cerveau c in cerveaux) c.enabled = isActive;
 				}
 			}
 		}
