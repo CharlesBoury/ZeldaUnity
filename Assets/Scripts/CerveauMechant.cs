@@ -21,7 +21,7 @@ public class CerveauMechant : Cerveau
 
 	new void Start()
 	{
-		ResetDirections();
+		DirectionAleatoire();
 		RestartPerseverance();
 	}
 
