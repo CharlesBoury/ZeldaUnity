@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 212347068507374920}
   - component: {fileID: 50965141874211066}
   - component: {fileID: 61045540192843056}
-  - component: {fileID: 114507106915320932}
-  - component: {fileID: 114711279332240782}
-  - component: {fileID: 114441327051388714}
+  - component: {fileID: 114549361066097992}
+  - component: {fileID: 114650899194970228}
   - component: {fileID: 114564236814056632}
   - component: {fileID: 114159906797037688}
+  - component: {fileID: 114406808780996816}
   m_Layer: 9
   m_Name: Perso
   m_TagString: Player
@@ -45,13 +45,14 @@ GameObject:
   - component: {fileID: 212448249820702310}
   - component: {fileID: 114589989111823578}
   - component: {fileID: 61786451441403932}
+  - component: {fileID: 114467319216246782}
   m_Layer: 9
   m_Name: Epee
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1868193700556170
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,9 +88,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368903887275760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4872375453422066}
   - {fileID: 4248199027184760}
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "rubisCollect\xE9s": 0
---- !u!114 &114441327051388714
+--- !u!114 &114406808780996816
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -199,28 +200,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1368903887275760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f3e6ce7efa74f6899bb36ef11a52b9, type: 3}
+  m_Script: {fileID: 11500000, guid: cbdc8438ce6ba4ed79641cc7ce85caa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  epee: {fileID: 1547289985678070}
+--- !u!114 &114467319216246782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547289985678070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5702e06dd71648c08dc376812007973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compteARebour: 0.05
+--- !u!114 &114549361066097992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368903887275760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524275ecd08424c1bb29cd631697a49a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: 0
   vitesse: 5
-  horizontal: 0
-  vertical: 0
-  cerveau: {fileID: 114507106915320932}
---- !u!114 &114507106915320932
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1368903887275760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94db77c4776bd4826b6c5c42697e0b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up: 0
-  down: 0
-  left: 0
-  right: 0
+  bouge: 0
 --- !u!114 &114564236814056632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1a18491ac6b43a68094f548c3077d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114711279332240782
+--- !u!114 &114650899194970228
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -254,10 +263,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1368903887275760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e036e6f72194a52a19210978369882, type: 3}
+  m_Script: {fileID: 11500000, guid: 57ee231a6329740a3af21dc847210f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  epee: {fileID: 1547289985678070}
+  deplacements: {fileID: 114549361066097992}
+  arme: {fileID: 114406808780996816}
+  up: 0
+  down: 0
+  left: 0
+  right: 0
+  a: 0
 --- !u!212 &212347068507374920
 SpriteRenderer:
   m_ObjectHideFlags: 1

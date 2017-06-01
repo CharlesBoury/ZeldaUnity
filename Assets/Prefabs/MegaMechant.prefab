@@ -28,7 +28,8 @@ GameObject:
   - component: {fileID: 114304424368039612}
   - component: {fileID: 114703128954691682}
   - component: {fileID: 114314147577007422}
-  m_Layer: 0
+  - component: {fileID: 114111627894715372}
+  m_Layer: 10
   m_Name: MegaMechant
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -102,7 +103,7 @@ Transform:
   m_GameObject: {fileID: 1808037590631112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4782867693967524}
   - {fileID: 4129454825235906}
@@ -243,12 +244,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c0ecdabbe984bc2a216b1d17a7b111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perseveranceMin: 0.5
-  perseveranceMax: 1
-  chanceDeSarreter: 0.3
-  attenteQuandImmobile: 0.3
+  deplacements: {fileID: 114714652826240030}
+  arme: {fileID: 114111627894715372}
+  state: 0
+  perseveranceMin: 0.4
+  perseveranceMax: 2
+  distanceMinPourTirer: 3
+  chanceDeTirer: 0.6
+  attenteAvantTir: 0.4
+  attenteApresTir: 0.3
   coll: {fileID: 61552378371533714}
-  showLineCast: 0
+  showDebugLines: 0
+--- !u!114 &114111627894715372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808037590631112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210f498f61d294c1eaac60526e99d4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1578602022764426, guid: f4bba78565bbe48b29751d99bfee5cb9, type: 2}
+  deplacements: {fileID: 114714652826240030}
 --- !u!114 &114304424368039612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6ae385e18134f2f8850122f83a1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: 3
-  pvMax: 3
+  pv: 2
+  pvMax: 2
   display: {fileID: 102664330933157416}
 --- !u!114 &114314147577007422
 MonoBehaviour:

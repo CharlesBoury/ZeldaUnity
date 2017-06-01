@@ -8,12 +8,18 @@ public class CerveauClavier : Cerveau
 	public bool left;
 	public bool right;
 
+	public bool a;
+
 	void Update ()
 	{
 		up    = Input.GetKey("up");
 		down  = Input.GetKey("down");
 		left  = Input.GetKey("left");
 		right = Input.GetKey("right");
+
+		a = Input.GetKeyDown("space");
+
+		if (a) arme.Attaquer();
 
 		// ------------------------------------------------
 		// filtrage des inputs

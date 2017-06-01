@@ -5,11 +5,7 @@ using UnityEngine;
 public class Cerveau : MonoBehaviour {
 
 	public Deplacements deplacements;
-
-	public virtual void Start()
-	{
-		deplacements = GetComponent<Deplacements>();
-	}
+	public Arme arme;
 
 	void OnDisable()
 	{
