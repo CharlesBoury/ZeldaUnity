@@ -56,8 +56,8 @@ GameObject:
   - component: {fileID: 50606622474781402}
   - component: {fileID: 61495270687971786}
   - component: {fileID: 61043964664104000}
-  - component: {fileID: 114771175884596658}
-  - component: {fileID: 114501869472719128}
+  - component: {fileID: 114317503760796128}
+  - component: {fileID: 114554054956459002}
   - component: {fileID: 114261268289132656}
   - component: {fileID: 114147313645387072}
   - component: {fileID: 114574559122316688}
@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1577603961982738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.33, y: 6.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4470229723591450}
@@ -257,7 +257,7 @@ MonoBehaviour:
   pv: 1
   pvMax: 1
   display: {fileID: 102204015917859936}
---- !u!114 &114501869472719128
+--- !u!114 &114317503760796128
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -265,13 +265,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1577603961982738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f3e6ce7efa74f6899bb36ef11a52b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 524275ecd08424c1bb29cd631697a49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: 0
   vitesse: 2
-  horizontal: 0
-  vertical: 0
-  cerveau: {fileID: 114771175884596658}
+  bouge: 0
+--- !u!114 &114554054956459002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577603961982738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c0ecdabbe984bc2a216b1d17a7b111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: 0
+  perseveranceMin: 0.5
+  perseveranceMax: 1
+  chanceDeSarreter: 0.3
+  attenteQuandImmobile: 0.5
+  coll: {fileID: 61495270687971786}
+  showLineCast: 0
 --- !u!114 &114574559122316688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,28 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contenu: {fileID: 1441000617314152, guid: 970352a4f05df4ad0a7d9cefc17f197d, type: 2}
---- !u!114 &114771175884596658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1577603961982738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e30aeda1b562442ba467d471f5a97a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  up: 0
-  down: 0
-  left: 0
-  right: 0
-  attenteQuandImmobile: 0.6
-  perseveranceMin: 0.5
-  perseveranceMax: 1
-  chanceDeSarreter: 0.3
-  showLineCast: 0
-  distLinecast: 0.6
-  sizeLinecast: 0.5
 --- !u!212 &212479953130589400
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,45 +1,28 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CerveauMechant : Cerveau
 {
-
-	public float attenteQuandImmobile;
-	public float perseveranceMin;
-	public float perseveranceMax;
+	public float perseveranceMin = 0.2f;
+	public float perseveranceMax = 1.2f;
 	float perseverance;
-
 	[Range(0, 1)]
 	public float chanceDeSarreter;
+	public float attenteQuandImmobile;
 
+	public Collider2D coll;
 	public bool showLineCast;
-	public float distLinecast;
-	public float sizeLinecast;
 
 
-
-	new void Start()
+	public override void Start()
 	{
-		DirectionAleatoire();
-		RestartPerseverance();
-	}
-
-	void RestartPerseverance()
-	{
-		perseverance = perseveranceMin + (perseveranceMax - perseveranceMin) * Random.Range(0.0f, 1.0f);
+		base.Start();
+		AllerVers(DirectionPossibleAleatoire());
 	}
 
 
-	void OnCollisionEnter2D(Collision2D coll) {
-		if (this.enabled) // le cerveau ne réagit aux collisions que s'il est actif
-		{
-			ChangeDirection();
-			RestartPerseverance();
-		}
-	}
-
-	void Update ()
+	void Update()
 	{
 		perseverance -= Time.deltaTime;
 		if (perseverance <= 0)
@@ -47,19 +30,47 @@ public class CerveauMechant : Cerveau
 			// 30% chance de s'arreter
 			if (Random.Range(0.0f, 1.0f) <= chanceDeSarreter)
 			{
-				ResetDirections();
-				perseverance = attenteQuandImmobile;
+				Stop();
 			}
 			else
 			{
-				ChangeDirection();
-				RestartPerseverance();
+				AllerVers(DirectionPossibleAleatoire());
 			}
 		}
 	}
 
-	void ChangeDirection() {
-		List<bool> mursPresents = MursPresents(distLinecast, sizeLinecast, showLineCast);
+
+	void AllerVers(Direction d)
+	{
+		deplacements.dir = d;
+		deplacements.bouge = true;
+		RestartPerseverance();
+	}
+
+
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		// le cerveau ne réagit aux collisions que s'il est actif
+		if (this.enabled) AllerVers(DirectionPossibleAleatoire());
+	}
+
+
+	void Stop()
+	{
+		deplacements.bouge = false;
+		perseverance = attenteQuandImmobile;
+	}
+
+
+	void RestartPerseverance()
+	{
+		perseverance = perseveranceMin + (perseveranceMax - perseveranceMin) * Random.Range(0.0f, 1.0f);
+	}
+
+
+	Direction DirectionPossibleAleatoire()
+	{
+		List<bool> mursPresents = MursPresents(showLineCast);
 
 		// compte le nombre de murs absents (combien de false dans la liste)
 		int possibilites = 0;
@@ -74,14 +85,19 @@ public class CerveauMechant : Cerveau
 			if (!mursPresents[i]) { // si libre
 				dice --;
 				if (dice == 0) {
-					AppuyerSurBoutons(i);
-					break;
+					return (Direction)i;
 				}
 			}
 		}
+
+		// Et s'il n'y avait aucune direction libre:
+		return Direction.Haut;
 	}
 
-	List<bool> MursPresents(float dist, float size, bool showDebug = false) {
+
+	List<bool> MursPresents(bool showDebug = false) {
+		float size = coll.bounds.extents.x; // on assume que c'est un carré.
+		float dist = size + 0.1f;
 
 		// renvoie une liste de bool, dans le même ordre
 		// que les directions: haut, bas, gauche, droite.
@@ -114,12 +130,5 @@ public class CerveauMechant : Cerveau
 					false);
 		}
 		return environnementPresent;
-	}
-
-	void AppuyerSurBoutons(int n) {
-		up    = (n==0);
-		down  = (n==1);
-		left  = (n==2);
-		right = (n==3);
 	}
 }

@@ -240,13 +240,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808037590631112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f3e6ce7efa74f6899bb36ef11a52b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 10c0ecdabbe984bc2a216b1d17a7b111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 3
-  horizontal: 0
-  vertical: 0
-  cerveau: {fileID: 114714652826240030}
+  perseveranceMin: 0.5
+  perseveranceMax: 1
+  chanceDeSarreter: 0.3
+  attenteQuandImmobile: 0.3
+  coll: {fileID: 61552378371533714}
+  showLineCast: 0
 --- !u!114 &114304424368039612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,20 +294,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808037590631112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e30aeda1b562442ba467d471f5a97a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 524275ecd08424c1bb29cd631697a49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 0
-  down: 0
-  left: 0
-  right: 0
-  attenteQuandImmobile: 0.6
-  perseveranceMin: 0.5
-  perseveranceMax: 2
-  chanceDeSarreter: 0.3
-  showLineCast: 0
-  distLinecast: 0.8
-  sizeLinecast: 0.75
+  dir: 0
+  vitesse: 3
+  bouge: 0
 --- !u!212 &212174333154384732
 SpriteRenderer:
   m_ObjectHideFlags: 1
