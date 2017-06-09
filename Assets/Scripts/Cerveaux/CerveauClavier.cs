@@ -3,23 +3,50 @@ using System.Collections;
 
 public class CerveauClavier : Cerveau
 {
+	public enum State {Move, Atk};
+	public State state;
+
 	public bool up;
 	public bool down;
 	public bool left;
 	public bool right;
-
 	public bool a;
+
+	Animator animator;
+
+	void Start()
+	{
+		animator = GetComponent<Animator>();
+	}
+
 
 	void Update ()
 	{
-		up    = Input.GetKey("up");
-		down  = Input.GetKey("down");
-		left  = Input.GetKey("left");
-		right = Input.GetKey("right");
-
 		a = Input.GetKeyDown("space");
 
-		if (a) arme.Attaquer();
+		if (state != State.Atk) 
+		{
+			if (a)
+			{
+				state = State.Atk;
+				animator.SetTrigger("Atk");
+			}
+			else
+			{
+				up    = Input.GetKey("up");
+				down  = Input.GetKey("down");
+				left  = Input.GetKey("left");
+				right = Input.GetKey("right");
+			}
+		}
+		else
+		{
+			up    = false;
+			down  = false;
+			left  = false;
+			right = false;
+		}
+
 
 		// ------------------------------------------------
 		// filtrage des inputs
@@ -45,5 +72,10 @@ public class CerveauClavier : Cerveau
 			// mais pas si 2 touches opposées sont pressées
 		 	&& !(up && down)
 			&& !(left && right);
+	}
+
+	void EndAtk()
+	{
+		state = State.Move;
 	}
 }

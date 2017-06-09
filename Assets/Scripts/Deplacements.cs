@@ -9,10 +9,12 @@ public class Deplacements : MonoBehaviour
 	public bool bouge;
 
 	Rigidbody2D rb;
+	Animator animator;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
 	}
 
 	void OnDisable()
@@ -22,12 +24,7 @@ public class Deplacements : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		// orientation
-		if (dir == Direction.Haut)   gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-		if (dir == Direction.Bas)    gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
-		if (dir == Direction.Gauche) gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
-		if (dir == Direction.Droite) gameObject.transform.rotation = Quaternion.Euler(0, 0, 270);
-
+		if (animator != null) animator.SetFloat("Direction", (float)dir);
 		// mouvement
 		if (bouge)
 		{
