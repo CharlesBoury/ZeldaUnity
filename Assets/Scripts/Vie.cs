@@ -6,16 +6,15 @@ public class Vie : MonoBehaviour {
 
 	public int pv = 1;
 	public int pvMax = 1;
-	public TextMesh display;
+
+	public GameObject destroyable;
 
 	void Start() {
 		pv = pvMax;
-		displayVie();
 	}
 
 	public void takeDamage() {
 		pv --;
-		displayVie();
 		if (pv <= 0) die();
 	}
 
@@ -27,12 +26,6 @@ public class Vie : MonoBehaviour {
 				gameObject.transform.position,
 				Quaternion.identity);
 		}
-		Destroy(gameObject, 0.1f);
-	}
-
-	public void displayVie() {
-		if (display != null) {
-			display.text = pv+"/"+pvMax;
-		}
+		if (destroyable != null) Destroy(destroyable);
 	}
 }

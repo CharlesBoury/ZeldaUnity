@@ -56,7 +56,8 @@ GameObject:
   - component: {fileID: 223350197061320752}
   - component: {fileID: 114973360105676788}
   - component: {fileID: 114891827342170822}
-  - component: {fileID: 114653328782194106}
+  - component: {fileID: 114635618044502164}
+  - component: {fileID: 114526352455384168}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -175,6 +176,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '#'
+--- !u!114 &114526352455384168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424030286029966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3549fcce9534d909aac28315ab9198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vie: {fileID: 0}
+  display: {fileID: 114899921614132934}
 --- !u!114 &114546487196900144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,7 +243,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114653328782194106
+--- !u!114 &114635618044502164
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -237,12 +251,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424030286029966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616d9c49765c4429c9513544e09c6826, type: 3}
+  m_Script: {fileID: 11500000, guid: e25e1e916815a456cb7c609ec649757b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heros: {fileID: 0}
-  rubisDisplay: {fileID: 114120713037960898}
-  coeurDisplay: {fileID: 114899921614132934}
+  ramasseur: {fileID: 0}
+  display: {fileID: 114120713037960898}
 --- !u!114 &114891827342170822
 MonoBehaviour:
   m_ObjectHideFlags: 1
