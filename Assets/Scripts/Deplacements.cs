@@ -6,6 +6,8 @@ public class Deplacements : MonoBehaviour
 {
 	public Direction dir;
 	public float vitesse;
+	[Range(0, 2)]
+	public float vMult = 1;
 	public bool bouge;
 
 	Rigidbody2D rb;
@@ -24,14 +26,18 @@ public class Deplacements : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		if (animator != null) animator.SetFloat("Direction", (float)dir);
+		if (animator != null)
+		{
+			animator.SetFloat("Direction", (float)dir);
+			animator.SetBool("Bouge", bouge);
+		}
 		// mouvement
 		if (bouge)
 		{
-			if (dir == Direction.Haut)   rb.velocity = new Vector2 (0, vitesse);
-			if (dir == Direction.Bas)    rb.velocity = new Vector2 (0,-vitesse);
-			if (dir == Direction.Gauche) rb.velocity = new Vector2 (-vitesse,0);
-			if (dir == Direction.Droite) rb.velocity = new Vector2 ( vitesse,0);
+			if (dir == Direction.Haut)   rb.velocity = new Vector2 (0, vitesse * vMult);
+			if (dir == Direction.Bas)    rb.velocity = new Vector2 (0,-vitesse * vMult);
+			if (dir == Direction.Gauche) rb.velocity = new Vector2 (-vitesse * vMult,0);
+			if (dir == Direction.Droite) rb.velocity = new Vector2 ( vitesse * vMult,0);
 		}
 		else
 		{

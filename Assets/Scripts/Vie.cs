@@ -26,6 +26,6 @@ public class Vie : MonoBehaviour {
 				gameObject.transform.position,
 				Quaternion.identity);
 		}
-		if (destroyable != null) Destroy(destroyable);
+		if (destroyable != null) Destroy(destroyable, 0.1f);
 	}
 }
