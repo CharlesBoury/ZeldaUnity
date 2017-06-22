@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: 1
-  vitesse: 2.3
+  vitesse: 1.9
   vMult: 1
   bouge: 0
 --- !u!114 &114490956695034856
@@ -224,11 +224,11 @@ MonoBehaviour:
   perseveranceMin: 0.3
   perseveranceMax: 1.8
   distanceMinPourTirer: 3
-  chanceDeTirer: 0.5
-  attenteAvantTir: 0.6
-  attenteApresTir: 0.3
+  chanceDeTirer: 0.7
+  attenteAvantTir: 0.8
+  attenteApresTir: 0.4
   coll: {fileID: 68255479422092766}
-  showDebugLines: 0
+  showDebugLines: 1
 --- !u!114 &114603966498963262
 MonoBehaviour:
   m_ObjectHideFlags: 1
