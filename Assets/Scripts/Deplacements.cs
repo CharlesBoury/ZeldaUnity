@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Deplacements : MonoBehaviour
 {
 	public Direction dir;
+	public bool bouge;
 	public float vitesse;
 	[Range(0, 2)]
-	public float vMult = 1;
-	public bool bouge;
+	public float vMult = 1; // pour ne pas marcher avec une vitesse linéaire
+
+	// infos d'un eventuel push
+	public float pushTimer;
+	public Vector2 pushDir;
+	public float pushPower;
 
 	Rigidbody2D rb;
 	Animator animator;
@@ -19,9 +25,11 @@ public class Deplacements : MonoBehaviour
 		animator = GetComponent<Animator>();
 	}
 
-	void OnDisable()
+	public void DoPush(Vector2 direction, float puissance, float temps)
 	{
-		rb.velocity = new Vector2 (0,0);
+		pushDir = direction;
+		pushPower = puissance;
+		pushTimer = temps;
 	}
 
 	void FixedUpdate ()
@@ -31,17 +39,30 @@ public class Deplacements : MonoBehaviour
 			animator.SetFloat("Direction", (float)dir);
 			animator.SetBool("Bouge", bouge);
 		}
+
 		// mouvement
-		if (bouge)
+		if (pushTimer > 0)
 		{
-			if (dir == Direction.Haut)   rb.velocity = new Vector2 (0, vitesse * vMult);
-			if (dir == Direction.Bas)    rb.velocity = new Vector2 (0,-vitesse * vMult);
-			if (dir == Direction.Gauche) rb.velocity = new Vector2 (-vitesse * vMult,0);
-			if (dir == Direction.Droite) rb.velocity = new Vector2 ( vitesse * vMult,0);
+			pushTimer -= Time.fixedDeltaTime;
+
+			// Vector2 vel = new Vector2();
+			// if (pushDir == Direction.Haut)   vel = new Vector2 (0, pushPower);
+			// if (pushDir == Direction.Bas)    vel = new Vector2 (0,-pushPower);
+			// if (pushDir == Direction.Gauche) vel = new Vector2 (-pushPower,0);
+			// if (pushDir == Direction.Droite) vel = new Vector2 ( pushPower,0);
+			rb.MovePosition(rb.position + pushDir * pushPower * Time.fixedDeltaTime);
 		}
-		else
+
+		else if (bouge)
 		{
-			rb.velocity = new Vector2 (0,0);
+			Vector2 vel = new Vector2();
+			if (dir == Direction.Haut)   vel = new Vector2 (0, vitesse);
+			if (dir == Direction.Bas)    vel = new Vector2 (0,-vitesse);
+			if (dir == Direction.Gauche) vel = new Vector2 (-vitesse,0);
+			if (dir == Direction.Droite) vel = new Vector2 ( vitesse,0);
+			rb.MovePosition(rb.position + vel * vMult * Time.fixedDeltaTime);
 		}
+		else rb.velocity = new Vector2(0,0);
+
 	}
 }

@@ -168,7 +168,7 @@ public class CerveauMechant : Cerveau
 			// lancer un rayon et voir si on collide avec l'environnement
 			// garder cette info dans la liste
 			environnementPresent.Add(
-				Physics2D.Linecast(
+				Physics2D.Linecast( // il faut filtrer (enlever) les triggers, see ContactFilter2D
 					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],Mathf.PI/2) * size,
 					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],-Mathf.PI/2) * size
 				)

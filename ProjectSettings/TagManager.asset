@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - HitBox
+  - DamageBox
   layers:
   - Default
   - TransparentFX
@@ -39,8 +40,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Decor
+  - name: Sol
     uniqueID: 4120743969
+    locked: 0
+  - name: Props
+    uniqueID: 3981198799
     locked: 0
   - name: Mechants
     uniqueID: 2419427557
@@ -50,6 +54,12 @@ TagManager:
     locked: 0
   - name: Roupies
     uniqueID: 4030270753
+    locked: 0
+  - name: Foreground
+    uniqueID: 1643009853
+    locked: 0
+  - name: UI
+    uniqueID: 1974224665
     locked: 0
   - name: Default
     uniqueID: 0
