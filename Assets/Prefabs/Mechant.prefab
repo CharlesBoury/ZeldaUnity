@@ -204,9 +204,6 @@ MonoBehaviour:
   bouge: 0
   vitesse: 1.7
   vMult: 1
-  pushTimer: 0
-  pushDir: {x: 0, y: 0}
-  pushPower: 1
 --- !u!114 &114480686584003630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1a18491ac6b43a68094f548c3077d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushPower: 11
+  pushTime: 0.15
 --- !u!114 &114490956695034856
 MonoBehaviour:
   m_ObjectHideFlags: 1

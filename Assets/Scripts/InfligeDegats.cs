@@ -5,6 +5,9 @@ using UnityEngine;
 public class InfligeDegats : MonoBehaviour
 {
 
+	public float pushPower = 10;
+	public float pushTime = 0.1f;
+
 	void OnTriggerEnter2D(Collider2D collider2D)
 	{
 		// Quand le trigger du infligeDegats touche une HitBox d'un autre layer
@@ -30,12 +33,6 @@ public class InfligeDegats : MonoBehaviour
 		Vie vie = hitColl.gameObject.GetComponent<Vie>();
 		if (vie != null)
 		{
-			// choix de la puissance de recul
-			float pushPower; float pushTime;
-			if      (layerAttaquant == LayerMask.NameToLayer("Player"))      {pushPower = 13; pushTime = 0.17f;}
-			else if (layerAttaquant == LayerMask.NameToLayer("Projectiles")) {pushPower =  8; pushTime = 0.10f;}
-			else                                                             {pushPower = 11; pushTime = 0.15f;}
-
 			vie.takeDamage(
 				(Vector2)((hitColl.transform.position - transform.position) + (Vector3)hitColl.offset).normalized,
 				pushPower,

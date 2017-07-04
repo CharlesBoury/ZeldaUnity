@@ -12,9 +12,9 @@ public class Deplacements : MonoBehaviour
 	public float vMult = 1; // pour ne pas marcher avec une vitesse linéaire
 
 	// infos d'un eventuel push
-	public float pushTimer;
-	public Vector2 pushDir;
-	public float pushPower;
+	float pushTimer;
+	Vector2 pushDir;
+	float pushPower;
 
 	Rigidbody2D rb;
 	Animator animator;
