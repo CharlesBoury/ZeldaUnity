@@ -43,8 +43,11 @@ TagManager:
   - name: Sol
     uniqueID: 4120743969
     locked: 0
-  - name: Props
+  - name: PropsDuFond
     uniqueID: 3981198799
+    locked: 0
+  - name: Fausse3D
+    uniqueID: 881260675
     locked: 0
   - name: Mechants
     uniqueID: 2419427557
