@@ -182,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368903887275760}
   m_LocalRotation: {x: -0.008726465, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 6.53, y: 1.46, z: 0}
+  m_LocalPosition: {x: 8.42, y: 3.61, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4188963454853908}
@@ -408,18 +408,18 @@ CompositeCollider2D:
         Y: 8124010
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.1840214, y: 0.2695112}
-      - {x: 0.2577487, y: 0.2695112}
-      - {x: 0.2577487, y: 0.8027566}
-      - {x: 0.4027076, y: 0.8027566}
-      - {x: 0.4027076, y: 1.0489613}
-      - {x: -0.42070732, y: 1.0489613}
-      - {x: -0.42070732, y: 0.8027566}
-      - {x: -0.2957489, y: 0.8027566}
-      - {x: -0.2957489, y: 0.2695112}
-      - {x: -0.1840214, y: 0.2695112}
-      - {x: -0.1840214, y: -0.0179838}
-      - {x: 0.1840214, y: -0.0179838}
+    - - {x: 0.1840214, y: 0.269511}
+      - {x: 0.2577497, y: 0.269511}
+      - {x: 0.2577497, y: 0.8027566}
+      - {x: 0.4027066, y: 0.8027566}
+      - {x: 0.4027066, y: 1.0489613}
+      - {x: -0.4207082, y: 1.0489613}
+      - {x: -0.4207082, y: 0.8027566}
+      - {x: -0.2957479, y: 0.8027566}
+      - {x: -0.2957479, y: 0.269511}
+      - {x: -0.1840214, y: 0.269511}
+      - {x: -0.1840214, y: -0.017984001}
+      - {x: 0.1840214, y: -0.017984001}
   m_VertexDistance: 0.0005
 --- !u!70 &70611221494666538
 CapsuleCollider2D:
@@ -737,7 +737,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.14545037, g: 0.25, b: 0.13051471, a: 0.609}
+      maxColor: {r: 0, g: 0, b: 0, a: 0.316}
     startSize:
       minMaxState: 0
       scalar: 0.13
@@ -3538,7 +3538,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -174223327
-  m_SortingLayer: -7
+  m_SortingLayer: -8
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -3666,11 +3666,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 266012793
-  m_SortingLayer: -4
+  m_SortingLayerID: 881260675
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d190c1281fe4b44369c77cb75c5f3ae2, type: 3}
-  m_Color: {r: 0.88235295, g: 0.8375693, b: 0.80449826, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
