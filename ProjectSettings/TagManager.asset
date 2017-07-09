@@ -43,20 +43,20 @@ TagManager:
   - name: Sol
     uniqueID: 4120743969
     locked: 0
+  - name: FootSteps
+    uniqueID: 1236124709
+    locked: 0
   - name: PropsDuFond
     uniqueID: 3981198799
     locked: 0
   - name: Fausse3D
     uniqueID: 881260675
     locked: 0
-  - name: Mechants
-    uniqueID: 2419427557
+  - name: PropsDeDevant
+    uniqueID: 128019239
     locked: 0
-  - name: "H\xE9ros"
-    uniqueID: 266012793
-    locked: 0
-  - name: Roupies
-    uniqueID: 4030270753
+  - name: Lumieres
+    uniqueID: 2922948049
     locked: 0
   - name: Foreground
     uniqueID: 1643009853
