@@ -36,7 +36,7 @@ public class DisplayCoeurs : MonoBehaviour {
 
 	void modifierNombreDeCoeurs()
 	{
-		int coeursNecessaires = (int)Mathf.Ceil(vie.pvMax/2.0F);
+		int coeursNecessaires = Mathf.CeilToInt(vie.pvMax/2.0F);
 		// Debug.Log("----------------------");
 		// Debug.Log(coeursNecessaires + " coeursNecessaires.");
 		if (coeursNecessaires < transform.childCount)

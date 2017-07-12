@@ -20,7 +20,7 @@ public class ScreenManager : MonoBehaviour {
 			{
 				for(int j = 0; j < 2; j++)
 				{
-					bool isActive = cam.gridX == i && cam.gridY == j;
+					bool isActive = cam.grid.x == i && cam.grid.y == j;
 					if ( i == 0 ) cerveaux = screensX0[j].GetComponentsInChildren<Cerveau>();
 					else          cerveaux = screensX1[j].GetComponentsInChildren<Cerveau>();
 					foreach (Cerveau c in cerveaux) c.enabled = isActive;

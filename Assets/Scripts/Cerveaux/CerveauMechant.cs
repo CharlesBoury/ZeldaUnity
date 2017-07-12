@@ -22,17 +22,8 @@ public class CerveauMechant : Cerveau
 	public bool showDebugLines;
 
 
-	List<Vector3> directions = new List<Vector3>();
-
 	void Start()
 	{
-		// ce serait bien de mettre ca autre part...
-		directions.Add(Vector3.up);
-		directions.Add(Vector3.down);
-		directions.Add(Vector3.left);
-		directions.Add(Vector3.right);
-
-
 		state = State.Move;
 		AllerVers(DirectionPossibleAleatoire());
 	}
@@ -50,26 +41,17 @@ public class CerveauMechant : Cerveau
 				// Raycast pour voir s'il y a quelque chose devant
 
 				// si un collider est trop près, on ne tirera pas.
-				// on teste tous les layers SAUF (~) celui du joueur
-				// pour pouvoir tirer si il n'y a rien devant sauf le joueur
-				int LayerJoueur = LayerMask.NameToLayer("Player");
-				int Mask = ~(1 << LayerJoueur); // le mask est un chiffre binaire (http://answers.unity3d.com/questions/8715/how-do-i-use-layermasks.html)
+				// on teste tous les layers SAUF (~) ceux du joueur et des méchants
+				// pour pouvoir tirer si il n'y a rien devant (sauf le joueur ou des méchants)
+				int Mask = ~(1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Mechants"));
+				// le mask est un chiffre binaire (http://answers.unity3d.com/questions/8715/how-do-i-use-layermasks.html)
 
-				// le raycast commence HORS du gameobject, sinon on touche son propre collider TOUT LE TEMPS
-				Vector3 offset = directions[(int)deplacements.dir] * (coll.bounds.extents.x +0.1f);
-				Vector3 debutRaycast = transform.position + offset;
-				RaycastHit2D hit = Physics2D.Linecast(
-					debutRaycast, // debut du Raycast
-					debutRaycast + directions[(int)deplacements.dir] * distanceMinPourTirer, // fin du Raycast
-					Mask); // colliders testés
-
-				//  debug du Raycast
-				if (showDebugLines) Debug.DrawLine(
-					debutRaycast,
-					debutRaycast + directions[(int)deplacements.dir] * distanceMinPourTirer,
-					Color.red,
-					0.5f,
-					false);
+				RaycastHit2D hit = Utils.LinecastInDirection(
+					coll,
+					new Vector2(1,1) * distanceMinPourTirer, // distance en x et en y à tester
+					deplacements.dir,
+					Mask,
+					showDebugLines, Color.red, 0.5F); // display time for debug line
 
 				// s'il y a  assez de distance devant
 				// et qu'on choisit de tirer
@@ -169,14 +151,14 @@ public class CerveauMechant : Cerveau
 			// garder cette info dans la liste
 			environnementPresent.Add(
 				Physics2D.Linecast( // il faut filtrer (enlever) les triggers, see ContactFilter2D
-					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],Mathf.PI/2) * size,
-					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],-Mathf.PI/2) * size
+					transform.position + (Utils.DirToVec3(i) * dist) + Utils.RotateZ(Utils.DirToVec3(i),Mathf.PI/2) * size,
+					transform.position + (Utils.DirToVec3(i) * dist) + Utils.RotateZ(Utils.DirToVec3(i),-Mathf.PI/2) * size
 				)
 			);
 			// dessiner des lignes de debug dans la scene, vert si rien, rouge si collide
 			if (showDebug) Debug.DrawLine(
-					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],Mathf.PI/2) * size,
-					transform.position + (directions[i] * dist) + Utils.RotateZ(directions[i],-Mathf.PI/2) * size,
+					transform.position + (Utils.DirToVec3(i) * dist) + Utils.RotateZ(Utils.DirToVec3(i),Mathf.PI/2) * size,
+					transform.position + (Utils.DirToVec3(i) * dist) + Utils.RotateZ(Utils.DirToVec3(i),-Mathf.PI/2) * size,
 					environnementPresent[i] ? Color.black : Color.green,
 					0.5f,
 					false);

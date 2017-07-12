@@ -44,16 +44,10 @@ public class Deplacements : MonoBehaviour
 		if (pushTimer > 0)
 		{
 			pushTimer -= Time.fixedDeltaTime;
-
-			// Vector2 vel = new Vector2();
-			// if (pushDir == Direction.Haut)   vel = new Vector2 (0, pushPower);
-			// if (pushDir == Direction.Bas)    vel = new Vector2 (0,-pushPower);
-			// if (pushDir == Direction.Gauche) vel = new Vector2 (-pushPower,0);
-			// if (pushDir == Direction.Droite) vel = new Vector2 ( pushPower,0);
 			rb.MovePosition(rb.position + pushDir * pushPower * Time.fixedDeltaTime);
 		}
 
-		else if (bouge)
+		else if (bouge && vitesse != 0)
 		{
 			Vector2 vel = new Vector2();
 			if (dir == Direction.Haut)   vel = new Vector2 (0, vitesse);
@@ -63,6 +57,5 @@ public class Deplacements : MonoBehaviour
 			rb.MovePosition(rb.position + vel * vMult * Time.fixedDeltaTime);
 		}
 		else rb.velocity = new Vector2(0,0);
-
 	}
 }
