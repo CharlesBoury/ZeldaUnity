@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Emitter : MonoBehaviour {
 
-	public ParticleSystem particleSystem;
+	public ParticleSystem emitter;
 	
 	void Trace () {
-		particleSystem.Emit(1);
+		emitter.Emit(1);
 	}
 }
