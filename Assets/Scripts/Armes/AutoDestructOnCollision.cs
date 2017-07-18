@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class AutoDestructOnCollision : MonoBehaviour {
 
+	bool trig;
+
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		Destroy(gameObject);
+
+		trig = true;
+	}
+
+	void LateUpdate()
+	{
+		// on destroy dans LateUpdate() pour laisser le temps
+		// à InfligeDegats d'attaquer
+		if (trig) Destroy(gameObject);
 	}
 }

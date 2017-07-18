@@ -312,8 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6ae385e18134f2f8850122f83a1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: 3
-  pvMax: 3
+  pv: 2
+  pvMax: 2
   destroyable: {fileID: 1577603961982738}
 --- !u!212 &212267976146128198
 SpriteRenderer:

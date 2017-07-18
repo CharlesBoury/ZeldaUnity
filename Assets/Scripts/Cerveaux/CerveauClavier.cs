@@ -26,7 +26,7 @@ public class CerveauClavier : Cerveau
 
 		if (state != State.Atk) 
 		{
-			if (a)
+			if (a && arme != null)
 			{
 				state = State.Atk;
 				animator.SetTrigger("Atk");
@@ -77,5 +77,16 @@ public class CerveauClavier : Cerveau
 	void EndAtk()
 	{
 		state = State.Move;
+	}
+
+	// utilisé en Animation Event
+	void DisableCerveau()
+	{
+		this.enabled = false;
+	}
+
+	void EnableCerveau()
+	{
+		this.enabled = true;
 	}
 }

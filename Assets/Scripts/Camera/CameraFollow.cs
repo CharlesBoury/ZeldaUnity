@@ -126,7 +126,7 @@ public class CameraFollow : MonoBehaviour {
 			deplacementsCible.enabled = false;
 			cible.GetComponent<Animator>().SetFloat("vitesseLecture", 0.55F);
 		}
-		if (AnimationStateNameIs("FadeIn"))
+		if (AnimationStateNameIs("FadeIn") || AnimationStateNameIs("FadeOut"))
 		{
 			deplacementsCible.bouge = true;
 		}
