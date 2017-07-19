@@ -58,4 +58,10 @@ public class Deplacements : MonoBehaviour
 		}
 		else rb.velocity = new Vector2(0,0);
 	}
+
+	// pour animator events
+	void TakeDir(int n)
+	{
+		dir = (Direction)n;
+	}
 }

@@ -72,6 +72,9 @@ public class CerveauClavier : Cerveau
 			// mais pas si 2 touches opposées sont pressées
 		 	&& !(up && down)
 			&& !(left && right);
+
+		if (arme != null) animator.SetFloat("TientEpee", 1);
+		else animator.SetFloat("TientEpee", 0);
 	}
 
 	void EndAtk()

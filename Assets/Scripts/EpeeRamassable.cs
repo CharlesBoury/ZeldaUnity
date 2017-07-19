@@ -26,7 +26,6 @@ public class EpeeRamassable : MonoBehaviour
 				papi.GetComponent<Animator>().SetTrigger("Disparition");
 
 				// jouer anim GetSword
-				collider2D.gameObject.GetComponent <Deplacements>().dir = Direction.Bas;
 				collider2D.gameObject.GetComponent <Animator>().SetTrigger("GetSword");
 				collider2D.gameObject.GetComponent <Animator>().Rebind();
 			}
