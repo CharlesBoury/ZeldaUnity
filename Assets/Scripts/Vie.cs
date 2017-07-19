@@ -6,13 +6,14 @@ public class Vie : MonoBehaviour {
 
 	public int pv = 1;
 	public int pvMax = 1;
+	public bool invincible = false;
 
 	public GameObject destroyable;
 
 	public void takeDamage(Vector2 direction, float pushPower, float pushTime) {
 		if (pv > 0)
 		{
-			pv --;
+			if (!invincible) pv --;
 			Deplacements deplacements = gameObject.GetComponent("Deplacements") as Deplacements;
 			if ( deplacements != null) deplacements.DoPush(direction, pushPower, pushTime);
 			if (pv <= 0) die();

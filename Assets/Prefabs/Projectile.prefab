@@ -107,9 +107,6 @@ MonoBehaviour:
   bouge: 0
   vitesse: 10
   vMult: 1
-  pushTimer: 0
-  pushDir: {x: 0, y: 0}
-  pushPower: 0
 --- !u!114 &114793095707159942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1a18491ac6b43a68094f548c3077d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushFrom: {fileID: 4871278016408636}
   pushPower: 8
   pushTime: 0.1
 --- !u!114 &114808593467320584
@@ -136,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pv: 1
   pvMax: 1
+  invincible: 0
   destroyable: {fileID: 1578602022764426}
 --- !u!212 &212270733186684764
 SpriteRenderer:

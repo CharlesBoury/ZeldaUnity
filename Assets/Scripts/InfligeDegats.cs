@@ -5,36 +5,32 @@ using UnityEngine;
 public class InfligeDegats : MonoBehaviour
 {
 
+	public Transform pushFrom;
 	public float pushPower = 10;
 	public float pushTime = 0.1f;
 
+	void Awake()
+	{
+		if (pushFrom == null) pushFrom = transform;
+	}
+
 	void OnTriggerEnter2D(Collider2D collider2D)
 	{
-		// Quand le trigger du infligeDegats touche une HitBox d'un autre layer
-		if (this.gameObject.layer != collider2D.gameObject.layer && collider2D.tag == "HitBox")
+		// Quand le trigger du infligeDegats touche un trigger HitBox d'un autre layer
+		if (this.gameObject.layer != collider2D.gameObject.layer && collider2D.tag == "HitBox" && collider2D.isTrigger)
 		{
-			// Debug.Log("trigger de "+ gameObject.transform.name+" touche hitbox de "+collider2D.transform.name);
-			Attaque(collider2D, gameObject.layer);
+			// Debug.Log("trigger de "+ gameObject.transform.name+" touche trigger hitbox de "+collider2D.transform.name);
+			Attaque(collider2D);
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D hit)
-	{
-		// Quand le collider (non trigger) du infligeDegats touche une HitBox (non trigger) d'un autre layer
-		if (this.gameObject.layer != hit.gameObject.layer && hit.collider.tag == "HitBox")
-		{
-			// Debug.Log("collider de "+ gameObject.transform.name+" touche collider hitbox de "+ hit.gameObject.transform.name);
-			Attaque(hit.collider, gameObject.layer);
-		}
-	}
-
-	void Attaque(Collider2D hitColl, int layerAttaquant)
+	void Attaque(Collider2D hitColl)
 	{
 		Vie vie = hitColl.gameObject.GetComponent<Vie>();
 		if (vie != null)
 		{
 			vie.takeDamage(
-				(Vector2)((hitColl.transform.position - transform.position) + (Vector3)hitColl.offset).normalized,
+				(Vector2)((hitColl.transform.position - pushFrom.position) + (Vector3)hitColl.offset).normalized,
 				pushPower,
 				pushTime
 			);

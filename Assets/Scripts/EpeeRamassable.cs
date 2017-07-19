@@ -20,6 +20,7 @@ public class EpeeRamassable : MonoBehaviour
 				// get Epee
 				GameObject poup = Instantiate(aGagner, collider2D.transform);
 				poup.name = "Epee";
+				poup.GetComponent<InfligeDegats>().pushFrom = collider2D.transform;
 				c.arme = aGagner.GetComponent<Epee>();
 				Destroy(gameObject);
 
