@@ -3763,7 +3763,7 @@ Prefab:
     - target: {fileID: 224346868959459662, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224635897570276590, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
@@ -3783,7 +3783,7 @@ Prefab:
     - target: {fileID: 224635897570276590, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224635897570276590, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
@@ -3808,7 +3808,7 @@ Prefab:
     - target: {fileID: 224479306533327282, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224479306533327282, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
@@ -3823,7 +3823,7 @@ Prefab:
     - target: {fileID: 224396223809686384, guid: 18974c84c2d1a4dbfab439dfe98001a9,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 46
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18974c84c2d1a4dbfab439dfe98001a9, type: 2}
@@ -15403,6 +15403,15 @@ Prefab:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 199776688352013834, guid: 799f89a788b644a7f900905287d87e3c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298689381975110, guid: 799f89a788b644a7f900905287d87e3c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 799f89a788b644a7f900905287d87e3c, type: 2}
   m_IsPrefabParent: 0
@@ -19983,8 +19992,9 @@ PolygonCollider2D:
       - {x: 4.9023247, y: 4.3550043}
       - {x: 5.130377, y: 4.5397987}
       - {x: 5.0262833, y: 5.638032}
-      - {x: 4.8091946, y: 6.1118584}
-      - {x: 4.9594727, y: 6.715045}
+      - {x: 4.7782326, y: 6.060256}
+      - {x: 4.9853973, y: 6.252449}
+      - {x: 4.8046646, y: 6.518955}
       - {x: 5.1586056, y: 7.081213}
       - {x: 5.8085194, y: 7.1451263}
       - {x: 6.0190697, y: 7.3100033}
