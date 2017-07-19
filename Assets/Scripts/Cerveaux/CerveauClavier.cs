@@ -81,15 +81,4 @@ public class CerveauClavier : Cerveau
 	{
 		state = State.Move;
 	}
-
-	// utilisé en Animation Event
-	void DisableCerveau()
-	{
-		this.enabled = false;
-	}
-
-	void EnableCerveau()
-	{
-		this.enabled = true;
-	}
 }

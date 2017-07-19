@@ -11,4 +11,16 @@ public class Cerveau : MonoBehaviour {
 	{
 		deplacements.bouge = false;
 	}
+
+	// utilisé en Event (Animation Event || Unity Event)
+	public void DisableCerveau()
+	{
+		this.enabled = false;
+	}
+
+	public void EnableCerveau()
+	{
+		this.enabled = true;
+	}
+
 }

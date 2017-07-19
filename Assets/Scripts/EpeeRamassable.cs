@@ -6,6 +6,7 @@ public class EpeeRamassable : MonoBehaviour
 {
 	public GameObject aGagner;
 	public GameObject papi;
+	public GameObject dialogue;
 
 	void OnTriggerEnter2D(Collider2D collider2D)
 	{
@@ -22,8 +23,9 @@ public class EpeeRamassable : MonoBehaviour
 				c.arme = aGagner.GetComponent<Epee>();
 				Destroy(gameObject);
 
-				// faire disparaitre papi
+				// faire disparaitre papi et texte
 				papi.GetComponent<Animator>().SetTrigger("Disparition");
+				Destroy(dialogue);
 
 				// jouer anim GetSword
 				collider2D.gameObject.GetComponent <Animator>().SetTrigger("GetSword");

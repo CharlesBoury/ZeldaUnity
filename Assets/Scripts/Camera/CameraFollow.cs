@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform cible;
 	public Collider2D cibleVisibleBox;
+	public Transform screens;
 	Camera cam;
 	Animator animator;
 	Collider2D cibleColl;
@@ -56,6 +57,22 @@ public class CameraFollow : MonoBehaviour {
 			camSize.x * grid.x,
 			camSize.y * grid.y,
 			transform.position.z);
+
+
+		// activer / desactiver les objets specifiques a chaque screen
+		foreach (Transform screen in screens)
+		{
+			// chaque screen doit être nommé: "X,Y"
+			// exemple: "0,0" ou "1,2"
+			bool isScreenActive = screen.gameObject.name == grid.x + "," + grid.y;
+			foreach (Transform child in screen)
+			{
+				// on active/desactive les cerveaux des enfants de chaque screen
+				if (child.GetComponent<Cerveau>() != null) child.GetComponent<Cerveau>().enabled = isScreenActive;
+				// et aussi les gameobjects avec le Component "SetActiveWhenCurrentScreen"
+				if (child.GetComponent<SetActiveWhenCurrentScreen>() != null) child.gameObject.SetActive(isScreenActive);
+			}
+		}
 	}
 
 	void LateUpdate ()
@@ -116,7 +133,7 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 
-	void Pause()
+	public void Pause()
 	{
 		gameIsPlaying = false;
 		// disable cerveau et deplacements pour piloter l'anim tranquillement
@@ -132,7 +149,7 @@ public class CameraFollow : MonoBehaviour {
 		}
 	}
 
-	void Play()
+	public void Play()
 	{
 		gameIsPlaying = true;
 
@@ -146,8 +163,8 @@ public class CameraFollow : MonoBehaviour {
 	{
 		cible.position = placeToTeleport;
 		deplacementsCible.bouge = false;
-		SetGrid();
 		Play();
+		SetGrid();
 	}
 
 	bool AnimationStateNameIs(string s){return animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer."+s);}
