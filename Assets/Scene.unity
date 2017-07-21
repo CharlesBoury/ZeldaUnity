@@ -9374,6 +9374,11 @@ Prefab:
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[3].Y
       value: -987484
       objectReference: {fileID: 0}
+    - target: {fileID: 212347068507374920, guid: 07499875a450845d1860817b263760ae,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07499875a450845d1860817b263760ae, type: 2}
   m_IsPrefabParent: 0
@@ -15467,6 +15472,7 @@ GameObject:
   - component: {fileID: 1320019789}
   - component: {fileID: 1320019788}
   - component: {fileID: 1320019790}
+  - component: {fileID: 1320019791}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -15580,6 +15586,20 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &1320019791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1320019786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.6397059, g: 0.4254758, b: 0.04233348, a: 0.297}
+  m_EffectDistance: {x: 4, y: 4}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1322240671
 Prefab:
   m_ObjectHideFlags: 0
