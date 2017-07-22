@@ -1,21 +1,22 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rubis : MonoBehaviour {
+public class Coeur : MonoBehaviour {
 
 	public int valeur = 1;
 	private bool ramasssable = true; // pour eviter plusieurs ramassages dans la même frame
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		// les rubis ne sont ramassables que par les triggers du joueur
+		// les coeurs ne sont ramassables que par les triggers du joueur
 		if (ramasssable && coll.isTrigger && coll.gameObject.layer == LayerMask.NameToLayer("Player"))
 		{
-			BourseARubis r = coll.gameObject.GetComponentInParent(typeof(BourseARubis)) as BourseARubis;
-			if (r != null)
+			Vie v = coll.gameObject.GetComponentInParent(typeof(Vie)) as Vie;
+			if (v != null)
 			{
-				r.rubisCollectés += valeur;
+				ramasssable = false;
+				v.pv += valeur;
 				Destroy(gameObject);
 			}
 		}

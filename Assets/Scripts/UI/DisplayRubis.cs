@@ -6,11 +6,11 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class DisplayRubis : MonoBehaviour {
 
-	public Ramasseur ramasseur;
+	public BourseARubis bourseARubis;
 	public Text display;
 
 	void Update()
 	{
-		if (ramasseur != null) display.text = (ramasseur.rubisCollectés.ToString());
+		if (bourseARubis != null) display.text = (bourseARubis.rubisCollectés.ToString());
 	}
 }

@@ -54,14 +54,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4270756806128292}
   - component: {fileID: 212347068507374920}
+  - component: {fileID: 95854036242588818}
   - component: {fileID: 50965141874211066}
   - component: {fileID: 70611221494666538}
+  - component: {fileID: 66061169001386312}
   - component: {fileID: 114650899194970228}
   - component: {fileID: 114549361066097992}
-  - component: {fileID: 95854036242588818}
   - component: {fileID: 114934557096700484}
   - component: {fileID: 114102962730791982}
-  - component: {fileID: 66061169001386312}
   - component: {fileID: 114591102721562148}
   m_Layer: 9
   m_Name: Perso
@@ -336,24 +336,24 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 61949845907602776}
     m_ColliderPaths:
-    - - X: 1840214
-        Y: 3839282
-      - X: -1840214
-        Y: 3839282
-      - X: -1840214
-        Y: -179838
-      - X: 1840214
-        Y: -179838
+    - - X: 2577487
+        Y: 8243220
+      - X: -2957489
+        Y: 8243220
+      - X: -2957489
+        Y: 2695110
+      - X: 2577487
+        Y: 2695110
   - m_Collider: {fileID: 61978314161889746}
     m_ColliderPaths:
-    - - X: 2577487
-        Y: 8243222
-      - X: -2957489
-        Y: 8243222
-      - X: -2957489
-        Y: 2695112
-      - X: 2577487
-        Y: 2695112
+    - - X: 2117944
+        Y: 4639528
+      - X: -2114548
+        Y: 4639528
+      - X: -2114548
+        Y: -987484
+      - X: 2117944
+        Y: -987484
   m_CompositePaths:
     m_Paths:
     - - {x: 0.2117944, y: 0.2695112}
@@ -493,10 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6ae385e18134f2f8850122f83a1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: 6
+  _pv: 6
   pvMax: 6
   invincible: 0
-  destroyable: {fileID: 1368903887275760}
 --- !u!198 &198778893056073100
 ParticleSystem:
   m_ObjectHideFlags: 1

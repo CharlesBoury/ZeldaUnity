@@ -20,15 +20,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4417730811470966}
   - component: {fileID: 212479953130589400}
+  - component: {fileID: 95410314697864960}
   - component: {fileID: 50606622474781402}
   - component: {fileID: 70257934395290596}
+  - component: {fileID: 58842289974550834}
   - component: {fileID: 114554054956459002}
   - component: {fileID: 114317503760796128}
   - component: {fileID: 114668063461771756}
   - component: {fileID: 114793278976241408}
   - component: {fileID: 114039424054325804}
-  - component: {fileID: 95410314697864960}
-  - component: {fileID: 58842289974550834}
   m_Layer: 10
   m_Name: Mechant
   m_TagString: HitBox
@@ -245,7 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fec366b15ff444a82daa4d63c0c2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contenu: {fileID: 1441000617314152, guid: 970352a4f05df4ad0a7d9cefc17f197d, type: 2}
+  dropItems:
+  - {fileID: 1441000617314152, guid: 970352a4f05df4ad0a7d9cefc17f197d, type: 2}
+  - {fileID: 1441000617314152, guid: 970352a4f05df4ad0a7d9cefc17f197d, type: 2}
+  - {fileID: 1503919759832104, guid: 784a4ccfed45643ad816ed70d3604344, type: 2}
+  - {fileID: 0}
 --- !u!114 &114105423092476224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,10 +448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6ae385e18134f2f8850122f83a1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pv: 2
+  _pv: 2
   pvMax: 2
   invincible: 0
-  destroyable: {fileID: 1577603961982738}
 --- !u!212 &212479953130589400
 SpriteRenderer:
   m_ObjectHideFlags: 1

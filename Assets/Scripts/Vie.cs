@@ -3,32 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Vie : MonoBehaviour {
-
-	public int pv = 1;
+	[SerializeField]
+	private int _pv = 1;
+	public int pv
+	{
+		get { return _pv; }
+		// borner les pv entre 0 et pvMax
+		set{ _pv = Mathf.Min(Mathf.Max(value, 0), pvMax); }
+	}
+	// forcer l'inspecteur à utiliser le setter
+	void OnValidate()
+	{
+		pv = _pv;
+	}
 	public int pvMax = 1;
 	public bool invincible = false;
 
-	public GameObject destroyable;
-
 	public void takeDamage(Vector2 direction, float pushPower, float pushTime) {
-		if (pv > 0)
-		{
-			if (!invincible) pv --;
-			Deplacements deplacements = gameObject.GetComponent("Deplacements") as Deplacements;
-			if ( deplacements != null) deplacements.DoPush(direction, pushPower, pushTime);
-			if (pv <= 0) die();
-		}
+		if (!invincible) pv --;
+		// push
+		Deplacements deplacements = gameObject.GetComponent("Deplacements") as Deplacements;
+		if ( deplacements != null) deplacements.DoPush(direction, pushPower, pushTime);
+
+		if (pv <= 0 && !invincible) die();
 	}
 
 	public void die() {
 		Conteneur conteneur = gameObject.GetComponent("Conteneur") as Conteneur;
 		if ( conteneur != null)
 		{
-			Instantiate(
-				conteneur.contenu,
-				gameObject.transform.position,
-				Quaternion.identity);
+			GameObject dropItem = conteneur.RandomItem();
+			if (dropItem != null)
+			{
+				Instantiate(
+					dropItem,
+					gameObject.transform.position,
+					Quaternion.identity,
+					gameObject.transform.parent);
+			}
 		}
-		if (destroyable != null) Destroy(destroyable, 0.1f);
+		Destroy(gameObject, 0.1f);
 	}
 }
