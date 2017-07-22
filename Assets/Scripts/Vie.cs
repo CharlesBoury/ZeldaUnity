@@ -19,13 +19,20 @@ public class Vie : MonoBehaviour {
 	public int pvMax = 1;
 	public bool invincible = false;
 
-	public void takeDamage(Vector2 direction, float pushPower, float pushTime) {
-		if (!invincible) pv --;
-		// push
-		Deplacements deplacements = gameObject.GetComponent("Deplacements") as Deplacements;
-		if ( deplacements != null) deplacements.DoPush(direction, pushPower, pushTime);
 
-		if (pv <= 0 && !invincible) die();
+
+	public void takeDamage(Vector2 direction, float pushPower, float pushTime) {
+		if (!invincible)
+		{
+			pv --;
+			Animator animator = gameObject.GetComponent("Animator") as Animator;
+			if (animator != null) animator.SetTrigger("Hit");
+			// push
+			Deplacements deplacements = gameObject.GetComponent("Deplacements") as Deplacements;
+			if ( deplacements != null) deplacements.DoPush(direction, pushPower, pushTime);
+
+			if (pv <= 0) die();
+		}
 	}
 
 	public void die() {
@@ -44,4 +51,6 @@ public class Vie : MonoBehaviour {
 		}
 		Destroy(gameObject, 0.1f);
 	}
+	public void BeInvincible() { invincible = true;  }
+	public void BeVulnerable() { invincible = false; }
 }

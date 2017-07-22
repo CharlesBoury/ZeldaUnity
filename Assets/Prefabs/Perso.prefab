@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4270756806128292}
   - component: {fileID: 212347068507374920}
+  - component: {fileID: 114656880280395778}
   - component: {fileID: 95854036242588818}
   - component: {fileID: 50965141874211066}
   - component: {fileID: 70611221494666538}
@@ -482,6 +483,18 @@ MonoBehaviour:
   left: 0
   right: 0
   a: 0
+--- !u!114 &114656880280395778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368903887275760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6825be064f68947139a5a770a2819d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teinte: {r: 1, g: 0.09558821, b: 0.22657178, a: 0}
 --- !u!114 &114934557096700484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6548,7 +6561,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1a13cc9b527384337876c6daf0c3ea9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
